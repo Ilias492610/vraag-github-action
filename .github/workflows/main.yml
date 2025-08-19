@@ -14,22 +14,20 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node_version }}
-        
-  
     - uses: devellany/send-mailer@v1.0.2
       with:
         host: smtp.google.com
       # Optional port (defaults to 465)
         port: 465
         account: examencloudsystemenilias@gmail.com
-        password: ${{secrets.MAIL_PASSWORD}}
+        password: MYSECRET
         sender: devellany
-        from: ${{secrets.MAIL_ADDRESS}}
-        to: devellay@dico.me
-        subject: mail title.
-        body: your messages.
+        from: examencloudsystemenilias@gmail.com
+        to: examencloudsystemenilias@gmail.com
+        subject: linesofcode.
+        body: linesofcode.
       # Optional content type (defaults to text/plain)
-        contentType: text/plain
+        contentType: /tmp/linesofcode.txt
       # Optional attachment files (JSON type. require property 'path')
-        attachments: '[{"path":"README.md"}]'
+        attachments: '[{"/tmp/linesofcode.txt":"README.md"}]'
 
